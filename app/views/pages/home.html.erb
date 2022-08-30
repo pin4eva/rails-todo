@@ -1,0 +1,9 @@
+<%= flash.each do |name,message| %>
+  <%= content_tag(:div, message, class: "alert alert-info #{name}") %>
+<% end %>
+<%if user_signed_in? %>
+  <h1>Welcome back !</h1>
+<%else%>
+  <h1>Please <%= link_to "Sign In", "/users/sign_in"%> </h1>
+<%end%>
+<h1>Pages #home</h1>

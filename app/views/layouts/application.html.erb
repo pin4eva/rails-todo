@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Todo 2</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+    <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
+    <%= javascript_importmap_tags %>
+    <%= hotwire_livereload_tags if Rails.env.development? %>
+  </head>
+  <body>
+    <div class="container">
+      <nav class="navbar">
+        <ul class="nav">
+          <li class="nav-item"><%=  link_to "Home", root_path , class: "nav-link link-dark" %></li>
+          <li class="nav-item"> <%=  link_to "About", about_path, class: "nav-link link-dark"  %> </li>
+          <li class="nav-item"> <%=  link_to "Contact", contact_path, class: "nav-link link-dark"  %> </li>
+          <li class="nav-item"> <%=  link_to "Sign In", signin_path, class: "nav-link link-dark"  %> </li>
+          <li class="nav-item"> <%=  link_to "Sign Up", signup_path, class: "nav-link link-dark"  %> </li>
+        </ul>
+        <button class="btn btn-primary">
+          <%= link_to "Log Out", signout_path, method: :delete, class: "text-light text-decoration-none"%>
+        </button>
+      </nav>
+      <%= yield %>
+    </div>
+  </body>
+</html>
